@@ -1,0 +1,454 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(#8ca8b1, #877fad);
+}
+header {
+  display: flex;
+  color: rgb(255, 255, 255);
+  background-color: #627a9e;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  height: 50px;
+  font-weight: bolder;
+  overflow-x: hidden;
+}
+#boards {
+  margin-top: 50px;
+  background: linear-gradient(#8ca8b1, #877fad);
+  height: calc(100vh - 50px);
+  width: 100%;
+  overflow-y: hidden;
+}
+#board-heading {
+  height: 40px;
+  color: #ffffff;
+  background-color: #695da7;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  overflow-x: none;
+}
+#lists-container {
+  height: calc(100% - 30px);
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+#lists {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: row;
+  padding-left: 20px;
+}
+#add-list {
+  min-width: 300px;
+  min-height: 60px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  background-color: #c1badf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#add-new-section {
+  min-width: 300px;
+  display: none;
+  background-color: #c1badf;
+  padding: 2%;
+  border-radius: 20px;
+}
+#add-new-section input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+#add-new-options {
+  display: flex;
+}
+#add-new-list,
+#close-new-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 2%;
+  background-color: #695da7;
+  width: 20%;
+  border-radius: 50px;
+  margin: 10px;
+}
+
+/* lists */
+
+.edit-list-name-input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-delete {
+  font-size: 20px;
+  margin: 10px;
+}
+.list-name {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  padding: 5px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.list-contents {
+  background-color: #c1badf;
+  width: 300px;
+  min-height: 60px;
+  max-height: 82vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: fit-content;
+  margin-right: 10px;
+  border-radius: 20px;
+  padding: 10px;
+}
+.list-contents  :hover{
+   scale: 1.03;
+}
+
+/* cards */
+.add-card-container {
+  min-width: 300px;
+  min-height: 60px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  background-color: #c1badf;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-new-card-options {
+  display: none;
+  min-width: 280px;
+  background-color: #c1badf;
+  padding: 2%;
+  border-radius: 20px;
+}
+.card-name-input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+.add-new-card-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 2%;
+  background-color: #695da7;
+  width: 20%;
+  border-radius: 50px;
+  margin: 10px;
+}
+.close-new-card-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 2%;
+  background-color: #695da7;
+  width: 20%;
+  border-radius: 50px;
+  margin: 10px;
+}
+.card-box {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 1.3rem;
+  background-color: #fff;
+  width: 280px;
+  min-height: 20px;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+.blur-body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  display: none;
+  z-index: 1000;
+}
+.card-Data-container {
+  min-width: 70%;
+  min-height: 50vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(#8ca8b1, #877fad);
+  border-radius: 20px;
+  padding: 20px;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  cursor: pointer;
+}
+.card-delete {
+  font-size: 30px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.card-name-input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+/* checklists */
+.add-checklist-container {
+ max-width: 80%;
+  min-height: 60px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  background: linear-gradient(#b0a3df, #627a9e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.add-new-checklist-section {
+  display: none;
+  max-width: 90%;
+  background-color: #809bb4;
+  padding: 2%;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+.checklist-name-input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+}
+.checklist-heading {
+  display: flex;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #627a9e;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.add-checklist-options {
+  display: flex;
+}
+.add-new-checklist-btn,
+.close-new-checklist-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  padding: 2%;
+  background-color: #557ea0;
+  width: 20%;
+  border-radius: 50px;
+  margin: 10px 5px;
+  cursor: pointer;
+}
+
+.check-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(8, 8, 8);
+}
+
+.checklist-icon {
+  font-size: 20px;
+}
+.check-list-title-div {
+  display: flex;
+  align-items: center;
+}
+.check-list-title {
+  display: flex;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 1.5rem;
+  font-weight: 500;
+  min-height: 20px;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.edit-checklist-name-input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.checklist-delete {
+  font-size: 1rem;
+  background-color: #6d3465;
+  border-radius: 5px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+/* checkitems */
+
+.add-check-item {
+  padding: 5px;
+  width: fit-content;
+  font-size: 1rem;
+  background-color: #5a5281;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.add-new-check-item-section {
+  display: none;
+  width: 95%;
+  background-color: #c1badf;
+  padding: 2%;
+}
+
+.add-check-item-name-input {
+  height: 6px;
+  width: 90%;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+.add-new-check-item-options {
+  display: flex;
+}
+
+.add-new-check-item-btn,
+.close-new-check-item-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  padding: 5px;
+  background-color: #695da7;
+  margin: 5px;
+}
+
+.add-new-check-item-btn {
+  width: 30px;
+}
+
+.close-new-check-item-btn {
+  width: 50px;
+}
+.checkitem-container {
+  display: flex;
+  margin: 10px 0px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+.checkitem-container :hover{
+  transform: scale(1.02);   
+
+}
+.check-item-content-checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.check-item-edit-icon,
+.check-item-delete-icon {
+  margin-right: 10px;
+}
+.check-item-content {
+  font-size: 1.3rem;
+  flex: 1;
+  padding: 1%;
+  margin: 5px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.edit-check-item-input {
+  height: 10px;
+  padding: 10px;
+  font-size: 1.3rem;
+  width: 90%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}

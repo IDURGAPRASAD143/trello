@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Trello</title>
+  </head>
+  <body>
+    <header>
+      <h1>Trello</h1>
+    </header>
+    <section id="boards">
+      <div id="board-heading">My Board</div>
+      <div id="lists-container">
+        <div id="lists"></div>
+        <div id="add-list-container">
+          <div id="add-list">+ Add another list</div>
+          <div id="add-new-section">
+            <input type="text" />
+            <div id="add-new-options">
+              <div id="add-new-list">Add</div>
+              <div id="close-new-list">Close</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="lists.js"></script>
+    <script type="module" src="load_database.js"></script>
+  </body>
+</html>
